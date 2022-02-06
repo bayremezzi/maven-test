@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fr.allianz.model.entities.AllianzEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -18,8 +19,8 @@ public class FileParser {
 
     private static final Logger logger = LoggerFactory.getLogger(FileParser.class.getName());
 
-    //@Value("/data.json")
-    //private String filePath;
+    @Value("${file-path}")
+    private String filePath;
 
     private List<AllianzEntity> allianzEntities = new ArrayList<>();
 
@@ -28,7 +29,7 @@ public class FileParser {
 
         try {
             allianzEntities = mapper
-                    .readValue(AllianzEntity.class.getResourceAsStream("/data.json"),
+                    .readValue(AllianzEntity.class.getResourceAsStream(filePath),
                             new TypeReference<>() {
                             });
         } catch (IOException e) {
