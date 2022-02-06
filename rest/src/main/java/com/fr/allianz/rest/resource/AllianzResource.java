@@ -22,16 +22,11 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/Allianz")
+@RequestMapping("/api/allianz")
 public class AllianzResource {
 
     @Autowired
     private AllianzEntityService allianzEntityService ;
-
-
-    public AllianzResource(AllianzEntityService allianzEntityService) {
-        this.allianzEntityService = allianzEntityService;
-    }
 
     @GetMapping
     @ApiOperation("read an allianz Entity")
@@ -43,6 +38,7 @@ public class AllianzResource {
             @ApiResponse(code = 500, message = "Internal server error")
     })
     public ResponseEntity<List<AllianzEntityDto>> getAllianzEntityDto() {
+        System.out.println("testttttttttttt");
         return ResponseEntity.ok(allianzEntityService.getEntities());
     }
 
