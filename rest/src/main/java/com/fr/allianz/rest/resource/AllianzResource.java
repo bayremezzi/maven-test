@@ -38,7 +38,6 @@ public class AllianzResource {
             @ApiResponse(code = 500, message = "Internal server error")
     })
     public ResponseEntity<List<AllianzEntityDto>> getAllianzEntityDto() {
-        System.out.println("testttttttttttt");
         return ResponseEntity.ok(allianzEntityService.getEntities());
     }
 
