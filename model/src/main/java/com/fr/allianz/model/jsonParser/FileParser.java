@@ -17,6 +17,7 @@ import java.util.List;
 public class FileParser {
 
     private static final Logger logger = LoggerFactory.getLogger(FileParser.class.getName());
+    public static final String DATA_JSON = "/data.json";
 
     //@Value("${data}")
     //private String data;
@@ -25,10 +26,9 @@ public class FileParser {
 
     public  List<AllianzEntity> readFile() {
         ObjectMapper mapper = getObjectMapper();
-
         try {
             allianzEntities = mapper
-                    .readValue(AllianzEntity.class.getResourceAsStream("/data.json"),
+                    .readValue(AllianzEntity.class.getResourceAsStream(DATA_JSON),
                             new TypeReference<>() {
                             });
         } catch (IOException e) {
