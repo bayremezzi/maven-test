@@ -21,7 +21,9 @@ public class FileParserTest {
         //When
         List<AllianzEntity> result = fileParser.readFile();
         //Then
-        Assert.assertNotNull(result);
+        Assert.assertEquals(result.size(), 7);
+        Assert.assertEquals(result.get(0).getId(), 1);
+        Assert.assertEquals(result.get(0).getLabel(), "allianz");
 
     }
 }
