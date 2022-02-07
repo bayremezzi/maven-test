@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan("com.fr.allianz.model")
+@ComponentScan("com.fr.allianz")
 @SpringBootApplication
 public class RestApplication {
 

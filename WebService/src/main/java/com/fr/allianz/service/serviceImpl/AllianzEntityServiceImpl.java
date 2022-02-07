@@ -24,7 +24,8 @@ public class AllianzEntityServiceImpl implements AllianzEntityService {
 
     @Override
     public List<AllianzEntityDto> getEntities() {
-        return (List<AllianzEntityDto>) entityMapper.toEntity(allianzEntityRepository.findAll());
+        List<AllianzEntity> allianzEntities = allianzEntityRepository.findAll();
+        return entityMapper.toDtos(allianzEntities);
     }
 
     @Override

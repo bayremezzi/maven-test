@@ -15,9 +15,7 @@ public class EntityMapperImpl implements EntityMapper<AllianzEntity, AllianzEnti
         if ( allianzEntityDto == null ) {
             return null;
         }
-        return new AllianzEntity(allianzEntityDto.getId(),
-                allianzEntityDto.getLabel(),
-                allianzEntityDto.getDate());
+        return new AllianzEntity(allianzEntityDto.getId(),allianzEntityDto.getLabel(),allianzEntityDto.getDate());
     }
 
     @Override
@@ -45,9 +43,9 @@ public class EntityMapperImpl implements EntityMapper<AllianzEntity, AllianzEnti
         if ( entityList == null ) {
             return null;
         }
-        List<AllianzEntity> entities = new ArrayList<>(entityList.size());
+        List<AllianzEntity> entities = new ArrayList<>();
         for ( AllianzEntityDto allianzEntityDto : entityList ) {
-            entities.add( toEntity( allianzEntityDto ) );
+            entities.add(this.toEntity( allianzEntityDto ) );
         }
         return entities;
     }
